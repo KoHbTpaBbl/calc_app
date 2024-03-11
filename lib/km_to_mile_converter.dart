@@ -15,7 +15,8 @@ class _KmToMileConverterState extends State<KmToMileConverter> {
     final double km = double.tryParse(_controller.text) ?? 0;
     final double miles = km * 0.621371;
     setState(() {
-      _result = '${km.toString()} km is equal to ${miles.toStringAsFixed(2)} miles';
+      _result =
+          '${km.toString()} km is equal to ${miles.toStringAsFixed(2)} miles';
     });
   }
 
@@ -24,8 +25,8 @@ class _KmToMileConverterState extends State<KmToMileConverter> {
     return Scaffold(
       //backgroundColor: Colors.black54,
       appBar: AppBar(
-        title: Text('Km to Mile Converter', style: TextStyle(color: Colors.white38)),
-           
+        title: Text('Km to Mile Converter',
+            style: TextStyle(color: Colors.white38)),
         backgroundColor: Colors.black54,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -35,16 +36,16 @@ class _KmToMileConverterState extends State<KmToMileConverter> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),        
-        child: Column(          
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[            
-            TextField(              
+          children: <Widget>[
+            TextField(
               controller: _controller,
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               inputFormatters: <TextInputFormatter>[
-  FilteringTextInputFormatter.allow(RegExp(r'\d')),
-],
+                FilteringTextInputFormatter.allow(RegExp(r'\d')),
+              ],
               decoration: InputDecoration(
                 labelText: 'Enter kilometers',
               ),
@@ -56,7 +57,6 @@ class _KmToMileConverterState extends State<KmToMileConverter> {
             ),
             SizedBox(height: 20),
             Text(_result),
-            
           ],
         ),
       ),
